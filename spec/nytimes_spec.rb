@@ -18,12 +18,14 @@ class Nytimes
     it 'can get copyright' do 
       #Using @hash, define a variable called `result` that returns the copyright
       result = @hash[:copyright]
+
       expect(result).to eq("Copyright (c) 2018 The New York Times Company. All Rights Reserved.")
     end
 
-    xit 'can get array of stories' do 
+    it 'can get array of stories' do 
       #Using @hash, define a variable called `result` that returns the array of stories
-  
+      result = @hash[:results]
+
       expect(result).to be_an_instance_of(Array)
       expect(result.count).to eq(44)
     end
