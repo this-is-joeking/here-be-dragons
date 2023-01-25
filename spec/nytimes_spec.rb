@@ -30,9 +30,12 @@ class Nytimes
       expect(result.count).to eq(44)
     end
 
-    xit 'can get all stories with subsection of politics' do 
+    it 'can get all stories with subsection of politics' do 
       #Using @hash, define a variable called `result` that returns all stories with subsection of politics.
-  
+      result = @hash[:results].select do |story|
+        story[:subsection] == "Politics"
+      end
+      
       expect(result).to be_an_instance_of(Array)
       expect(result.count).to eq(6)
       expect(result.first[:title]).to eq("Congressional G.O.P. Agenda Quietly Falls Into Place Even as Trump Steals the Spotlight")
